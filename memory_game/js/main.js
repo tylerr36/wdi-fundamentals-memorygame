@@ -1,17 +1,30 @@
 
 var cards = ["queen", "queen", "king", "king"];
-var cardInPlay = [];
-var cardOne = cards[0];
-var cardTwo = cards[2];
+var cardsInPlay = [];
+//THESE ARE ARRAYS
 
-cardInPlay.push(cardOne);
-cardInPlay.push(cardTwo);
-
-if (cardInPlay.length === 2) {
-	if (cardInPlay[0] === cardInPlay[1])
-		{alert("You found a match.")}
-	else {alert("Sorry, try again.")}
+function checkForMatch() {
+	if (cardsInPlay[0] === cardsInPlay[1]) {
+  console.log("You found a match!");
+} else {
+  console.log("Sorry, try again.");
 }
+};
+//this is god knows fucking what
 
-console.log("User flipped" + " " + cardOne);
-console.log("User flipped" + " " + cardTwo);
+function flipCard(cardId) 
+//THIS IS A FUNCTION. cardID is the parameter that the flipCard function accepts
+{
+	console.log("User flipped " + cards[cardId]);
+	cardsInPlay.push(cards[cardId]);
+};
+	
+flipCard(0);
+flipCard(2);
+//these are calls. the 0 ties to the first "queen" way at the top. 
+//the 2 ties to the 1st "king" way at the top
+checkForMatch();
+//this runs all that shit ("queen" and "king") back through the 
+//"function checkForMatch" thing. 
+
+
