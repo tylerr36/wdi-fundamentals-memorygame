@@ -23,6 +23,16 @@ var cards = [
 //keep track of cards in play
 var cardsInPlay = [];
 
+function createBoard() {
+	for (var i = 0; i < cards.length; i++) {
+    var cardElement = document.createElement('img');
+    cardElement.setAttribute('src',"images/back.png");
+    cardElement.setAttribute('data-id',i);
+    cardElement.addEventListener('click',flipCard);
+    document.getElementById('game-board').appendChild(cardElement);
+	}
+}
+
 //confirm if cards are a match
 function checkForMatch() {
 	if (cardsInPlay[0] === cardsInPlay[1]) {
@@ -30,23 +40,22 @@ function checkForMatch() {
 } else {
   alert("Sorry, try again.");
 }
-};
+}
 
-function flipCard(cardId) 
 
-{
+
+function flipCard(){
+var cardID = this.getAttribute('data-id');
 	console.log("User flipped " + cards[cardId].rank);
 	cardsInPlay.push(cards[cardId].rank);
 	console.log(cards[cardId].cardImage);
 	console.log(cards[cardId].suit);
+	checkForMatch();
 };
 	
-flipCard(0);
-flipCard(2);
-
-checkForMatch();
 
 
+createBoard();
 
 
 
