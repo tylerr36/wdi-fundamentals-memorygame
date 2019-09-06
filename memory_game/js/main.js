@@ -1,30 +1,53 @@
-
-var cards = ["queen", "queen", "king", "king"];
+var cards = [
+{
+	rank: "queen",
+	suit: "hearts",
+	cardImage: "images/queen-of-hearts.png"
+},
+{
+	rank: "queen",
+	suit: "diamonds",
+	cardImage: "images/queen-of-diamonds.png"
+},
+{
+	rank: "king", 
+	suit: "hearts", 
+	cardImage: "images/king-of-hearts.png"
+},
+{
+	rank: "king",
+	suit: "diamonds",
+	cardImage: "images/king-of-diamonds.png"
+}
+];
+//keep track of cards in play
 var cardsInPlay = [];
-//THESE ARE ARRAYS
 
+//confirm if cards are a match
 function checkForMatch() {
 	if (cardsInPlay[0] === cardsInPlay[1]) {
-  console.log("You found a match!");
+  alert("You found a match!");
 } else {
-  console.log("Sorry, try again.");
+  alert("Sorry, try again.");
 }
 };
-//this is god knows fucking what
 
 function flipCard(cardId) 
-//THIS IS A FUNCTION. cardID is the parameter that the flipCard function accepts
+
 {
-	console.log("User flipped " + cards[cardId]);
-	cardsInPlay.push(cards[cardId]);
+	console.log("User flipped " + cards[cardId].rank);
+	cardsInPlay.push(cards[cardId].rank);
+	console.log(cards[cardId].cardImage);
+	console.log(cards[cardId].suit);
 };
 	
 flipCard(0);
 flipCard(2);
-//these are calls. the 0 ties to the first "queen" way at the top. 
-//the 2 ties to the 1st "king" way at the top
+
 checkForMatch();
-//this runs all that shit ("queen" and "king") back through the 
-//"function checkForMatch" thing. 
+
+
+
+
 
 
